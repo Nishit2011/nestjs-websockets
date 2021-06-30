@@ -1,0 +1,69 @@
+{
+  "name": "websockets-app",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "@nestjs/platform-express": "^6.0.0",
+    "@nestjs/platform-socket.io": "^6.11.11",
+    "@nestjs/websockets": "^6.11.11",
+    "reflect-metadata": "^0.1.12",
+    "rimraf": "^2.6.2",
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^6.0.0",
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.13",
+    "@types/node": "^10.12.18",
+    "@types/socket.io": "^2.1.13",
+    "@types/supertest": "^2.0.7",
+    "i": "^0.3.6",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
+    "npm": "^7.19.0",
+    "prettier": "^1.15.3",
+    "supertest": "^3.4.1",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.7.0",
+    "tslint": "5.12.1",
+    "typescript": "^3.2.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
